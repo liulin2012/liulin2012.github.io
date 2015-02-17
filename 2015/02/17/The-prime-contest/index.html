@@ -9,37 +9,33 @@
     
     <meta name="author" content="John Doe">
     
-    <meta name="description" content="HW1b - Optional - Prime Contest
-Algorithm
+    <meta name="description" content="Algorithm
 I have used the Sieve_of_Eratosthenes algorithm to delete the primes from the vector.
 Multi-thread
-I have us">
+I have used the multithread technology to">
     
     
-    <meta name="description" content="HW1b - Optional - Prime Contest
-Algorithm
+    <meta name="description" content="Algorithm
 I have used the Sieve_of_Eratosthenes algorithm to delete the primes from the vector.
 Multi-thread
-I have used the multithread technology to speed up the prog">
+I have used the multithread technology to speed up the program.I have test some data.You ca">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The prime contest">
 <meta property="og:url" content="http://yoursite.com/2015/02/17/The-prime-contest/">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="HW1b - Optional - Prime Contest
-Algorithm
+<meta property="og:description" content="Algorithm
 I have used the Sieve_of_Eratosthenes algorithm to delete the primes from the vector.
 Multi-thread
-I have used the multithread technology to speed up the prog">
+I have used the multithread technology to speed up the program.I have test some data.You ca">
 <meta property="og:image" content="http://i.imgur.com/f8dSURel.png">
 <meta property="og:image" content="http://i.imgur.com/0NN7rXal.png">
 <meta property="og:image" content="http://i.imgur.com/oNFQTwTl.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The prime contest">
-<meta name="twitter:description" content="HW1b - Optional - Prime Contest
-Algorithm
+<meta name="twitter:description" content="Algorithm
 I have used the Sieve_of_Eratosthenes algorithm to delete the primes from the vector.
 Multi-thread
-I have used the multithread technology to speed up the prog">
+I have used the multithread technology to speed up the program.I have test some data.You ca">
 
 
     
@@ -116,12 +112,11 @@ I have used the multithread technology to speed up the prog">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HW1b_-_Optional_-_Prime_Contest"><span class="toc-number">1.</span> <span class="toc-text">HW1b - Optional - Prime Contest</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Algorithm"><span class="toc-number">1.1.</span> <span class="toc-text">Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multi-thread"><span class="toc-number">1.2.</span> <span class="toc-text">Multi-thread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiler_optimize"><span class="toc-number">1.3.</span> <span class="toc-text">Compiler optimize</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Algorithm"><span class="toc-number">1.</span> <span class="toc-text">Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multi-thread"><span class="toc-number">2.</span> <span class="toc-text">Multi-thread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiler_optimize"><span class="toc-number">3.</span> <span class="toc-text">Compiler optimize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analyze"><span class="toc-number">4.</span> <span class="toc-text">Analyze</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Final"><span class="toc-number">5.</span> <span class="toc-text">Final</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="HW1b_-_Optional_-_Prime_Contest">HW1b - Optional - Prime Contest</h1>
-<h2 id="Algorithm">Algorithm</h2>
+		<h2 id="Algorithm">Algorithm</h2>
 <p>I have used the <a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="external">Sieve_of_Eratosthenes </a>algorithm to delete the primes from the vector.</p>
 <h2 id="Multi-thread">Multi-thread</h2>
 <p>I have used the multithread technology to speed up the program.I have test some data.You can change the thread number to check the answer and find the best thread number in this experiment.</p>
@@ -155,24 +150,21 @@ I have used the multithread technology to speed up the prog">
 <p><img src="http://i.imgur.com/0NN7rXal.png" alt="Imgur"></p>
 <p><img src="http://i.imgur.com/oNFQTwTl.png" alt="Imgur"></p>
 <h2 id="Compiler_optimize">Compiler optimize</h2>
-<pre><code>clang++ -std=c++11  -O2 main.cpp
-I have <span class="operator"><span class="keyword">use</span> the <span class="string">`-O2`</span> <span class="keyword">to</span> <span class="keyword">optimize</span> the compiler <span class="keyword">and</span> <span class="keyword">then</span>
-
-        ./a.out
-        This trick can [Maximize Speed](https://msdn.microsoft.com/en-us/library/<span class="number">8</span>f8h5cxt.aspx) <span class="keyword">when</span> compile the C++ code.
-
-        ##<span class="keyword">Analyze</span>
-        I have research <span class="keyword">on</span> <span class="keyword">on</span> the internet
-        &gt;The <span class="built_in">bit</span> complexity <span class="keyword">of</span> the algorithm <span class="keyword">is</span> O(n (<span class="keyword">log</span> n) (<span class="keyword">log</span> <span class="keyword">log</span> n)) <span class="built_in">bit</span> operations <span class="keyword">with</span> a memory requirement <span class="keyword">of</span> O(n).
-
-        My result <span class="keyword">show</span> above <span class="keyword">when</span> I test the <span class="keyword">data</span> $$$<span class="number">10</span>^{<span class="number">9</span>}$$$,$$$<span class="number">10</span>^{<span class="number">10</span>}$$$,$$$<span class="number">10</span>^{<span class="number">11</span>}$$$.Due <span class="keyword">to</span> the algorithm complexity,I calculate the $$$<span class="number">10</span>^{<span class="number">12</span>}$$$ need <span class="keyword">to</span> <span class="keyword">use</span> <span class="number">17</span> <span class="keyword">minute</span>.
-
-        ##Final
-        <span class="keyword">If</span> you have <span class="keyword">any</span> question,be free <span class="keyword">to</span> contact me.Thank you.
-
-        * Author:lin
-        * Email:liulin.jacob@gmail.com</span>
-</code></pre>  
+<pre><code><span class="comment">clang</span><span class="literal">+</span><span class="literal">+</span> <span class="literal">-</span><span class="comment">std=c</span><span class="literal">+</span><span class="literal">+</span><span class="comment">11</span>  <span class="literal">-</span><span class="comment">O2</span> <span class="comment">main</span><span class="string">.</span><span class="comment">cpp</span>
+</code></pre><p>I have use the <code>-O2</code> to optimize the compiler and then</p>
+<pre><code>        ./a.<span class="keyword">out</span>
+</code></pre><p>This trick can <a href="https://msdn.microsoft.com/en-us/library/8f8h5cxt.aspx" target="_blank" rel="external">Maximize Speed</a> when compile the C++ code.</p>
+<h2 id="Analyze">Analyze</h2>
+<p>I have research on on the internet</p>
+<pre><code>        &gt;The bit complexity <span class="operator">of</span> <span class="operator">the</span> algorithm is O(n (<span class="built_in">log</span> n) (<span class="built_in">log</span> <span class="built_in">log</span> n)) bit operations <span class="operator">with</span> <span class="operator">a</span> memory requirement <span class="operator">of</span> O(n).
+</code></pre><p>My result show above when I test the data $$$10^{9}$$$,$$$10^{10}$$$,$$$10^{11}$$$.Due to the algorithm complexity,I calculate the $$$10^{12}$$$ need to use 17 minute.</p>
+<h2 id="Final">Final</h2>
+<p>If you have any question,be free to contact me.Thank you.</p>
+<ul>
+<li>Author:lin</li>
+<li>Email:liulin.jacob@gmail.com</li>
+</ul>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -216,7 +208,7 @@ I have <span class="operator"><span class="keyword">use</span> the <span class="
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HW1b_-_Optional_-_Prime_Contest"><span class="toc-number">1.</span> <span class="toc-text">HW1b - Optional - Prime Contest</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Algorithm"><span class="toc-number">1.1.</span> <span class="toc-text">Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multi-thread"><span class="toc-number">1.2.</span> <span class="toc-text">Multi-thread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiler_optimize"><span class="toc-number">1.3.</span> <span class="toc-text">Compiler optimize</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Algorithm"><span class="toc-number">1.</span> <span class="toc-text">Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multi-thread"><span class="toc-number">2.</span> <span class="toc-text">Multi-thread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiler_optimize"><span class="toc-number">3.</span> <span class="toc-text">Compiler optimize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analyze"><span class="toc-number">4.</span> <span class="toc-text">Analyze</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Final"><span class="toc-number">5.</span> <span class="toc-text">Final</span></a></li></ol>
  
   </div>
 
