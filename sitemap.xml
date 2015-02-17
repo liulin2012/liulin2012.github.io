@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/testpage/index.html</loc>
-    <lastmod>2015-02-17T19:12:11.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2014/11/07/realize-dht-network-through-restful/</loc>
     <lastmod>2015-02-17T18:14:08.000Z</lastmod>
   </url>
