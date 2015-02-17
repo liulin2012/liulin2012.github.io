@@ -81,6 +81,107 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/02/17/The-prime-contest/" title="The prime contest" itemprop="url">The prime contest</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-17T06:37:34.000Z" itemprop="datePublished"> Published Feb 17 2015</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="HW1b_-_Optional_-_Prime_Contest">HW1b - Optional - Prime Contest</h1>
+<h2 id="Algorithm">Algorithm</h2>
+<p>I have used the <a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="external">Sieve_of_Eratosthenes </a>algorithm to delete the primes from the vector.</p>
+<h2 id="Multi-thread">Multi-thread</h2>
+<p>I have used the multithread technology to speed up the program.I have test some data.You can change the thread number to check the answer and find the best thread number in this experiment.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Data</th>
+<th style="text-align:center">Thread number</th>
+<th style="text-align:center">Execution time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1~$$$10^9$$$</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">0.6 Sec</td>
+</tr>
+<tr>
+<td style="text-align:center">1~$$$10^{10}$$$</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">6.8 Sec</td>
+</tr>
+<tr>
+<td style="text-align:center">1~$$$10^{11}$$$</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">90 Sec</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://i.imgur.com/f8dSURel.png" alt="Imgur"></p>
+<p><img src="http://i.imgur.com/0NN7rXal.png" alt="Imgur"></p>
+<p><img src="http://i.imgur.com/oNFQTwTl.png" alt="Imgur"></p>
+<h2 id="Compiler_optimize">Compiler optimize</h2>
+<pre><code>clang++ -std=c++11  -O2 main.cpp
+I have <span class="operator"><span class="keyword">use</span> the <span class="string">`-O2`</span> <span class="keyword">to</span> <span class="keyword">optimize</span> the compiler <span class="keyword">and</span> <span class="keyword">then</span>
+
+        ./a.out
+        This trick can [Maximize Speed](https://msdn.microsoft.com/en-us/library/<span class="number">8</span>f8h5cxt.aspx) <span class="keyword">when</span> compile the C++ code.
+
+        ##<span class="keyword">Analyze</span>
+        I have research <span class="keyword">on</span> <span class="keyword">on</span> the internet
+        &gt;The <span class="built_in">bit</span> complexity <span class="keyword">of</span> the algorithm <span class="keyword">is</span> O(n (<span class="keyword">log</span> n) (<span class="keyword">log</span> <span class="keyword">log</span> n)) <span class="built_in">bit</span> operations <span class="keyword">with</span> a memory requirement <span class="keyword">of</span> O(n).
+
+        My result <span class="keyword">show</span> above <span class="keyword">when</span> I test the <span class="keyword">data</span> $$$<span class="number">10</span>^{<span class="number">9</span>}$$$,$$$<span class="number">10</span>^{<span class="number">10</span>}$$$,$$$<span class="number">10</span>^{<span class="number">11</span>}$$$.Due <span class="keyword">to</span> the algorithm complexity,I calculate the $$$<span class="number">10</span>^{<span class="number">12</span>}$$$ need <span class="keyword">to</span> <span class="keyword">use</span> <span class="number">17</span> <span class="keyword">minute</span>.
+
+        ##Final
+        <span class="keyword">If</span> you have <span class="keyword">any</span> question,be free <span class="keyword">to</span> contact me.Thank you.
+
+        * Author:lin
+        * Email:liulin.jacob@gmail.com</span>
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/02/16/hello-world/" title="Hello World" itemprop="url">Hello World</a>
   </h1>
   <p class="article-author">By
