@@ -196,11 +196,11 @@ DHT(Distributed Hash Tables)is a class of a decentralized distributed system tha
 <h1 id="2-RESTful">2.RESTful</h1>
 <p>The RESTful(<a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank" rel="external"><strong>Representational state transfer</strong></a>) is used to connect each node.It is easy to use because it only use the <strong>HTTP command</strong> which is familiar to us.Every node has RESTful client and server,so they can send the request to another and get the response.</p>
 <p>In the client side,the client send the <strong>http request</strong> to the server side and get a Response from the server.</p>
-<p>[php highlight=”3-6,19”]<br>private Response getRequest(URI uri) {<br>        try {<br>            Response cr = client.target(uri)<br>                    .request(MediaType.APPLICATION_XML_TYPE)<br>                    .header(Time.TIME_STAMP, Time.advanceTime())<br>                    .get();<br>            processResponseTimestamp(cr);<br>            return cr;<br>        } catch (Exception e) {<br>            error(&quot;Exception during GET request: &quot; + e);<br>            return null;<br>        }<br>    }</p>
-<p>public String[] get(NodeInfo n, String k) throws Failed{<br>        UriBuilder ub = UriBuilder.fromUri(n.addr);<br>        URI getPath = ub.queryParam(&quot;key&quot;, k).build();<br>        info(&quot;client get(&quot;+getPath+&quot;)&quot;);<br>        Response response=getRequest(getPath);<br>        if (response == null || response.getStatus() &gt;= 300) {<br>            throw new DHTBase.Failed(&quot;GET ?key=&quot;+k+&quot;addr=&quot;+n.addr);<br>        } else {<br>            return response.readEntity(tableRowType).getValue().vals;<br>        }<br>    }<br>[/php]</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Response <span class="title">getRequest</span>(URI uri) {</div><div class="line">		<span class="keyword">try</span> {</div><div class="line">			Response cr = client.target(uri)</div><div class="line">					.request(MediaType.APPLICATION_XML_TYPE)</div><div class="line">					.header(Time.TIME_STAMP, Time.advanceTime())</div><div class="line">					.get();</div><div class="line">			processResponseTimestamp(cr);</div><div class="line">			<span class="keyword">return</span> cr;</div><div class="line">		} <span class="keyword">catch</span> (Exception e) {</div><div class="line">			error(&quot;Exception during GET request: &quot; + e);</div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		}</div><div class="line">	}</div><div class="line"></div><div class="line"><span class="keyword">public</span> String[] <span class="title">get</span>(NodeInfo n, String k) <span class="keyword">throws</span> Failed{</div><div class="line">		UriBuilder ub = UriBuilder.fromUri(n.addr);</div><div class="line">		URI getPath = ub.queryParam(&quot;key&quot;, k).build();</div><div class="line">		info(&quot;client get(&quot;+getPath+&quot;)&quot;);</div><div class="line">		Response response=getRequest(getPath);</div><div class="line">		<span class="keyword">if</span> (response == <span class="keyword">null</span> || response.getStatus() &gt;= <span class="number">300</span>) {</div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> DHTBase.Failed(&quot;GET ?key=&quot;+k+&quot;addr=&quot;+n.addr);</div><div class="line">		} <span class="keyword">else</span> {</div><div class="line">			<span class="keyword">return</span> response.readEntity(tableRowType).getValue().vals;</div><div class="line">		}</div><div class="line">	}</div></pre></td></tr></table></figure>
+
 <p>In the server side,you can use the annotation to identify the path and response the request.</p>
-<p>[php]<br>    @GET<br>    @Path(&quot;info&quot;)<br>    @Produces(&quot;application/xml&quot;)<br>    public Response getNodeInfoXML() {<br>        return new NodeService(headers, uriInfo).getNodeInfo();<br>    }</p>
-<p>[/php]</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="annotation">@GET</span></div><div class="line"><span class="annotation">@Path</span>(&amp;quot;info&amp;quot;)</div><div class="line"><span class="annotation">@Produces</span>(&amp;quot;application/xml&amp;quot;)</div><div class="line"><span class="keyword">public</span> Response <span class="title">getNodeInfoXML</span>() {</div><div class="line">	<span class="keyword">return</span> <span class="keyword">new</span> NodeService(headers, uriInfo).getNodeInfo();</div><div class="line">}</div></pre></td></tr></table></figure>
+
 <p>The more detail about the RESTful you can see the wiki and the paper in the UCI.</p>
 <h1 id="3-Final">3.Final</h1>
 <p>This is my first time to write a English technology passage,so if you have found there are some errors or someplace you didn’t understand yet,please do not hesitate to contact me through the email <strong>liulin.jacob@gmail.com </strong>or leave a message below the passage.I am glad to receive your email.If you have some comment about my blog,I am appreciated to learn from you.</p>
@@ -306,6 +306,8 @@ DHT(Distributed Hash Tables)is a class of a decentralized distributed system tha
 	<p class="asidetitle">Categories</p>
 		<ul>
 		
+			<li><a href="/categories/Algorithm/" title="Algorithm">Algorithm<sup>1</sup></a></li>
+		
 			<li><a href="/categories/Cloud-Computing/" title="Cloud Computing">Cloud Computing<sup>1</sup></a></li>
 		
 			<li><a href="/categories/Daily-life/" title="Daily life">Daily life<sup>1</sup></a></li>
@@ -318,6 +320,12 @@ DHT(Distributed Hash Tables)is a class of a decentralized distributed system tha
 <div class="tagslist">
 	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
+		
+			<li><a href="/tags/multithread/" title="multithread">multithread<sup>1</sup></a></li>
+		
+			<li><a href="/tags/C/" title="C++">C++<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Algorithm/" title="Algorithm">Algorithm<sup>1</sup></a></li>
 		
 			<li><a href="/tags/RESTful/" title="RESTful">RESTful<sup>1</sup></a></li>
 		
