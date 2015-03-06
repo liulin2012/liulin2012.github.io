@@ -4,7 +4,7 @@
   <subtitle><![CDATA[More code , Have fun]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-03-06T05:35:29.654Z</updated>
+  <updated>2015-03-06T05:38:51.261Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,9 +18,14 @@
     <title><![CDATA[]]></title>
     <link href="http://yoursite.com/2015/03/06/MaaaaaaaaaaaaaaaC/"/>
     <id>http://yoursite.com/2015/03/06/MaaaaaaaaaaaaaaaC/</id>
-    <published>2015-03-06T05:28:50.000Z</published>
-    <updated>2015-03-06T05:28:50.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="程序员必备的开发工具—-MAC">程序员必备的开发工具—-MAC</h1>
+    <published>2015-03-06T05:38:22.000Z</published>
+    <updated>2015-03-06T05:38:22.000Z</updated>
+    <content type="html"><![CDATA[<p>title: Mac<br>date: 2015-03-06 00:37:34<br>categories:</p>
+<ul>
+<li>Mac<br>tags:</li>
+<li>Mac<h1 id="程序员必备的开发工具—-MAC">程序员必备的开发工具—-MAC</h1>
+</li>
+</ul>
 <h2 id="前言">前言</h2>
 <p>用mac也1年多了，前半年基本用来打游戏看电影了，由于mac基于unix而来，游戏比较少，好在我只玩dota2，所以对我来说，mac的娱乐性很足。</p>
 <p>真正让我感觉离不开mac的，是我这半年来的学习和开发，在<a href="http://yanguango.com" target="_blank" rel="external">yanguango</a>和<a href="http://wilbeibi.com" target="_blank" rel="external">wilbeibi</a>的帮助下，对mac可以说有了全新的认识，也对linux编程，shell，vim有了更深入的了解。</p>
@@ -99,9 +104,10 @@
 <p>作者:lin<br>邮箱:liulin.jacob@gmail.com</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="程序员必备的开发工具—-MAC">程序员必备的开发工具—-MAC</h1>
-<h2 id="前言">前言</h2>
-<p>用mac也1年多了，前半年基本用来打游戏看电影了，由于mac基于unix而来，游戏比较少，好在我只玩dota2，所以对我来说，mac的娱乐性很]]>
+    <![CDATA[<p>title: Mac<br>date: 2015-03-06 00:37:34<br>categories:</p>
+<ul>
+<li>Mac<br>tags:</li>
+<li>Mac<h1 id="程序员必备的开发工具—-MAC">程序员必备的开发工具—-MAC</h1]]>
     </summary>
     
   </entry>
