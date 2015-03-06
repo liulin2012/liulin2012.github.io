@@ -4,7 +4,7 @@
   <subtitle><![CDATA[More code , Have fun]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-03-06T06:24:44.965Z</updated>
+  <updated>2015-03-06T06:32:38.260Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,17 +15,12 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[]]></title>
+    <title><![CDATA[程序员必备的开发工具---MAC]]></title>
     <link href="http://yoursite.com/2015/03/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BF%85%E5%A4%87%E7%9A%84%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-MAC/"/>
     <id>http://yoursite.com/2015/03/06/程序员必备的开发工具-MAC/</id>
-    <published>2015-03-06T06:24:29.000Z</published>
-    <updated>2015-03-06T06:24:29.000Z</updated>
-    <content type="html"><![CDATA[<p>title: 程序员必备的开发工具—-MAC<br>date: 2015-03-06 00:40:49<br>categories:</p>
-<ul>
-<li>Mac<br>tags:</li>
-<li>Mac</li>
-</ul>
-<h1 id="程序员必备的开发工具—-MAC">程序员必备的开发工具—-MAC</h1>
+    <published>2015-03-06T06:27:26.000Z</published>
+    <updated>2015-03-06T06:32:27.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="程序员必备的开发工具—-MAC">程序员必备的开发工具—-MAC</h1>
 <h2 id="前言">前言</h2>
 <p>用mac也1年多了，前半年基本用来打游戏看电影了，由于mac基于unix而来，游戏比较少，好在我只玩dota2，所以对我来说，mac的娱乐性很足。</p>
 <p>真正让我感觉离不开mac的，是我这半年来的学习和开发，在<a href="http://yanguango.com" target="_blank" rel="external">yanguango</a>和<a href="http://wilbeibi.com" target="_blank" rel="external">wilbeibi</a>的帮助下，对mac可以说有了全新的认识，也对linux编程，shell，vim有了更深入的了解。</p>
@@ -104,13 +99,14 @@
 <p>作者:lin<br>邮箱:liulin.jacob@gmail.com</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>title: 程序员必备的开发工具—-MAC<br>date: 2015-03-06 00:40:49<br>categories:</p>
-<ul>
-<li>Mac<br>tags:</li>
-<li>Mac</li>
-</ul>
-<h1 id="程序员必备的开发工具—-]]>
+    <![CDATA[<h1 id="程序员必备的开发工具—-MAC">程序员必备的开发工具—-MAC</h1>
+<h2 id="前言">前言</h2>
+<p>用mac也1年多了，前半年基本用来打游戏看电影了，由于mac基于unix而来，游戏比较少，好在我只玩dota2，所以对我来说，mac的娱乐性很]]>
     </summary>
+    
+      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
+    
+      <category term="Mac" scheme="http://yoursite.com/categories/Mac/"/>
     
   </entry>
   
