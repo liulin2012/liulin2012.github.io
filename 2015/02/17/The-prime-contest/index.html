@@ -1,7 +1,593 @@
-<!DOCTYPE HTML><html><head><meta charset="UTF-8"><title>The prime contest | Lin</title><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="author" content="lin liu"><meta name="description" content="Overview
-sum the primes from a to b, inclusive, a &amp;lt; b &amp;lt;= $10^{14}$.Measure how long it takes your algorithm to sum the primes from 1 to $10^9$.D"><meta name="description" content="Overview
-sum the primes from a to b, inclusive, a &lt; b &lt;= $10^{14}$.Measure how long it takes your algorithm to sum the primes from 1 to $10^9$.Determine the complexity of your algorithm and calc"><meta property="og:type" content="article"><meta property="og:title" content="The prime contest"><meta property="og:url" content="http://yoursite.com/2015/02/17/The-prime-contest/"><meta property="og:site_name" content="Lin"><meta property="og:description" content="Overview
-sum the primes from a to b, inclusive, a &lt; b &lt;= $10^{14}$.Measure how long it takes your algorithm to sum the primes from 1 to $10^9$.Determine the complexity of your algorithm and calc"><meta property="og:image" content="http://i.imgur.com/f8dSURel.png"><meta property="og:image" content="http://i.imgur.com/0NN7rXal.png"><meta property="og:image" content="http://i.imgur.com/oNFQTwTl.png"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="The prime contest"><meta name="twitter:description" content="Overview
-sum the primes from a to b, inclusive, a &lt; b &lt;= $10^{14}$.Measure how long it takes your algorithm to sum the primes from 1 to $10^9$.Determine the complexity of your algorithm and calc"><link rel="alternative" href="/atom.xml" title="Lin" type="application/atom+xml"><link rel="icon" href="/img/favicon.ico"><link rel="apple-touch-icon" href="/img/jacman.jpg"><link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg"><link rel="stylesheet" href="/css/style.css" type="text/css"></head><body><header><div><div id="imglogo"><a href="/"><img src="/img/logo.png" alt="Lin" title="Lin"></a></div><div id="textlogo"><h1 class="site-name"><a href="/" title="Lin">Lin</a></h1><h2 class="blog-motto">More code , Have fun</h2></div><div class="navbar"><a class="navbutton navmobile" href="#" title="Menu"></a></div><nav class="animated"><ul><ul><li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li><li><a href="/about">About</a></li><li><form class="search" action="//google.com/search" method="get" accept-charset="utf-8"><label>Search</label><input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search"> <input type="hidden" name="q" value="site:yoursite.com"></form></li></ul></ul></nav></div></header><div id="container"><div id="main" class="post" itemscope itemprop="blogPost"><article itemprop="articleBody"><header class="article-info clearfix"><h1 itemprop="name"><a href="/2015/02/17/The-prime-contest/" title="The prime contest" itemprop="url">The prime contest</a></h1><p class="article-author">By <a href="http://yoursite.com/about" title="lin liu" target="_blank" itemprop="author">lin liu</a></p><p class="article-time"><time datetime="2015-02-17T06:37:34.000Z" itemprop="datePublished">Published Feb 17 2015</time></p></header><div class="article-content"><div id="toc" class="toc-article"><strong class="toc-title">Contents</strong><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Algorithm"><span class="toc-number">1.1.</span> <span class="toc-text">Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multi-thread"><span class="toc-number">1.2.</span> <span class="toc-text">Multi-thread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiler_optimize"><span class="toc-number">1.3.</span> <span class="toc-text">Compiler optimize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analyze"><span class="toc-number">1.4.</span> <span class="toc-text">Analyze</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Final"><span class="toc-number">1.5.</span> <span class="toc-text">Final</span></a></li></ol></li></ol></div><h1 id="Overview">Overview</h1><p>sum the primes from a to b, inclusive, a &lt; b &lt;= $10^{14}$.<br>Measure how long it takes your algorithm to sum the primes from 1 to $10^9$.<br>Determine the complexity of your algorithm and calculate how long it would take to sum for a=1, b = $10^{12}$.</p><h2 id="Algorithm">Algorithm</h2><p>I have used the <a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="external">Sieve_of_Eratosthenes</a>algorithm to delete the primes from the vector.</p><h2 id="Multi-thread">Multi-thread</h2><p>I have used the multithread technology to speed up the program.I have test some data.You can change the thread number to check the answer and find the best thread number in this experiment.</p><table><thead><tr><th style="text-align:center">Data</th><th style="text-align:center">Thread number</th><th style="text-align:center">Execution time</th></tr></thead><tbody><tr><td style="text-align:center">1~$10^9$</td><td style="text-align:center">1000</td><td style="text-align:center">0.6 Sec</td></tr><tr><td style="text-align:center">1~$10^{10}$</td><td style="text-align:center">5000</td><td style="text-align:center">6.8 Sec</td></tr><tr><td style="text-align:center">1~$10^{11}$</td><td style="text-align:center">10000</td><td style="text-align:center">90 Sec</td></tr></tbody></table><p><img src="http://i.imgur.com/f8dSURel.png" alt=""></p><p><img src="http://i.imgur.com/0NN7rXal.png" alt=""></p><p><img src="http://i.imgur.com/oNFQTwTl.png" alt=""></p><h2 id="Compiler_optimize">Compiler optimize</h2><pre><code><span class="comment">clang</span><span class="literal">+</span><span class="literal">+</span> <span class="literal">-</span><span class="comment">std=c</span><span class="literal">+</span><span class="literal">+</span><span class="comment">11</span>  <span class="literal">-</span><span class="comment">O2</span> <span class="comment">main</span><span class="string">.</span><span class="comment">cpp</span>
-</code></pre><p>I have use the <code>-O2</code> to optimize the compiler and then</p><pre><code>./a.<span class="keyword">out</span>
-</code></pre><p>This trick can <a href="https://msdn.microsoft.com/en-us/library/8f8h5cxt.aspx" target="_blank" rel="external">Maximize Speed</a> when compile the C++ code.</p><h2 id="Analyze">Analyze</h2><p>I have research on on the internet</p><blockquote><p>The bit complexity of the algorithm is O(n (log n) (log log n)) bit operations with a memory requirement of O(n).</p></blockquote><p>My result show above when I test the data $10^{9}$,$10^{10}$,$10^{11}$.Due to the algorithm complexity,I calculate the $10^{12}$ need to use 17 minute.</p><h2 id="Final">Final</h2><p>If you have any question,be free to contact me.Thank you!</p><ul><li>Author:lin</li><li>Email:liulin.jacob@gmail.com</li><li>Code Address:<a href="https://github.com/liulin2012/CPE593/tree/master/prime" target="_blank" rel="external">The prime contest</a></li></ul></div><footer class="article-footer clearfix"><div class="article-catetags"><div class="article-categories"><span></span> <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></div><div class="article-tags"><span></span> <a href="/tags/Algorithm/">Algorithm</a><a href="/tags/C/">C++</a><a href="/tags/multithread/">multithread</a></div></div><div class="article-share" id="share"><div data-url="http://yoursite.com/2015/02/17/The-prime-contest/" data-title="The prime contest | Lin" data-tsina="1939168341" class="share clearfix"></div></div></footer></article><nav class="article-nav clearfix"><div class="prev"><a href="/2015/03/06/程序员必备的开发工具-MAC/" title="程序员必备的开发工具---MAC"><strong>上一篇：</strong><br><span>程序员必备的开发工具---MAC</span></a></div><div class="next"><a href="/2014/11/07/realize-dht-network-through-restful/" title="Realize DHT Network through RESTful"><strong>下一篇：</strong><br><span>Realize DHT Network through RESTful</span></a></div></nav><section id="comments" class="comment"><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div></section></div><div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div><div id="toc" class="toc-aside"><strong class="toc-title">Contents</strong><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Algorithm"><span class="toc-number">1.1.</span> <span class="toc-text">Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multi-thread"><span class="toc-number">1.2.</span> <span class="toc-text">Multi-thread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiler_optimize"><span class="toc-number">1.3.</span> <span class="toc-text">Compiler optimize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analyze"><span class="toc-number">1.4.</span> <span class="toc-text">Analyze</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Final"><span class="toc-number">1.5.</span> <span class="toc-text">Final</span></a></li></ol></li></ol></div><div id="asidepart"><div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div><aside class="clearfix"><div class="categorieslist"><p class="asidetitle">Categories</p><ul><li><a href="/categories/Algorithm/" title="Algorithm">Algorithm<sup>1</sup></a></li><li><a href="/categories/Cloud-Computing/" title="Cloud Computing">Cloud Computing<sup>1</sup></a></li><li><a href="/categories/Daily-life/" title="Daily life">Daily life<sup>1</sup></a></li><li><a href="/categories/Mac/" title="Mac">Mac<sup>1</sup></a></li></ul></div><div class="tagslist"><p class="asidetitle">Tags</p><ul class="clearfix"><li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li><li><a href="/tags/RESTful/" title="RESTful">RESTful<sup>1</sup></a></li><li><a href="/tags/DHT/" title="DHT">DHT<sup>1</sup></a></li><li><a href="/tags/multithread/" title="multithread">multithread<sup>1</sup></a></li><li><a href="/tags/C/" title="C++">C++<sup>1</sup></a></li><li><a href="/tags/Algorithm/" title="Algorithm">Algorithm<sup>1</sup></a></li></ul></div><div class="linkslist"><p class="asidetitle">Links</p><ul><li><a href="http://danteland.me/" target="_blank" title="danteland">danteland</a></li><li><a href="http://leaver.me/" target="_blank" title="leaver">leaver</a></li><li><a href="http://luoyibu.com/" target="_blank" title="luoyibu">luoyibu</a></li><li><a href="http://wilbeibi.com/" target="_blank" title="wilbeibi">wilbeibi</a></li><li><a href="http://yanguango.com/" target="_blank" title="yanguango">yanguango</a></li></ul></div><div class="weiboshow"><p class="asidetitle">Weibo</p><iframe width="100%" height="119" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1939168341&verifier=dc742f79&dpc=1"></iframe></div><div class="rsspart"><a href="/atom.xml" target="_blank" title="rss">RSS</a></div></aside></div></div><footer><div id="footer"><div class="line"><span></span><div class="author"></div></div><section class="info"><p>Hello ,I&#39;m lin.<br>Welcome to my blog.</p></section><div class="social-font" class="clearfix"><a href="http://weibo.com/1939168341" target="_blank" class="icon-weibo" title="微博"></a> <a href="https://github.com/liulin2012" target="_blank" class="icon-github" title="github"></a></div><p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Pacman">Jacman</a> © 2015 <a href="http://yoursite.com/about" target="_blank" title="lin liu">lin liu</a></p></div></footer><script src="/js/jquery-2.0.3.min.js"></script><script src="/js/jquery.imagesloaded.min.js"></script><script src="/js/gallery.js"></script><script type="text/javascript">$(document).ready(function(){function e(){"number"==typeof window.innerWidth?n=window.innerWidth:document.documentElement&&document.documentElement.clientWidth&&(n=document.documentElement.clientWidth)}$(".navbar").click(function(){$("header nav").toggleClass("shownav")});var n=0,s=$("#main"),a=$("#asidepart"),o=$(".closeaside"),d=$(".openaside");$(window).resize(function(){e(),n>=1024?$("header nav").removeClass("shownav"):(s.removeClass("moveMain"),a.css("display","block").removeClass("fadeOut"),d.css("display","none"),$("#toc.toc-aside").css("display","none"))}),o.click(function(){a.addClass("fadeOut").css("display","none"),d.css("display","block").addClass("fadeIn"),s.addClass("moveMain")}),d.click(function(){d.css("display","none").removeClass("beforeFadeIn"),a.css("display","block").removeClass("fadeOut").addClass("fadeIn"),s.removeClass("moveMain")}),$(window).scroll(function(){d.css("top",Math.max(80,260-$(this).scrollTop()))})});</script><script type="text/javascript">$(document).ready(function(){{var a=$(".article-content>iframe"),t=$(".article-content>embed"),n=$("#toc");$("article h2")}ah=$("article h2"),ta=$("#toc.toc-aside"),o=$(".openaside"),c=$(".closeaside"),a.length>0&&a.wrap('<div class="video-container" />'),t.length>0&&t.wrap('<div class="video-container" />'),0==ah.length?n.css("display","none"):(c.click(function(){ta.css("display","block").addClass("fadeIn")}),o.click(function(){ta.css("display","none")}),$(window).scroll(function(){ta.css("top",Math.max(140,320-$(this).scrollTop()))}))});</script><script type="text/javascript">$(document).ready(function(){var t=$(".share"),a=t.attr("data-url"),e=encodeURIComponent(a),r=t.attr("data-title"),c=t.attr("data-tsina"),s=(t.attr("description"),['<a href="#" class="overlay" id="qrcode"></a>','<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url='+e+'"/></div>','<a href="https://www.facebook.com/sharer.php?u='+e+'" class="article-share-facebook" target="_blank" title="Facebook"></a>','<a href="https://twitter.com/intent/tweet?url='+e+'" class="article-share-twitter" target="_blank" title="Twitter"></a>','<a href="#qrcode" class="article-share-qrcode" title="微信"></a>','<a href="http://widget.renren.com/dialog/share?resourceUrl='+e+"&srcUrl="+e+"&title="+r+'" class="article-share-renren" target="_blank" title="人人"></a>','<a href="http://service.weibo.com/share/share.php?title='+r+"&url="+e+"&ralateUid="+c+'&searchPic=true&style=number" class="article-share-weibo" target="_blank" title="微博"></a>','<span title="Share to"></span>'].join(""));t.append(s),$(".article-share-qrcode").click(function(){var t=$("#qrcode-pic").attr("data-src");$("#qrcode-pic").attr("src",t),$("#qrcode-pic").load(function(){$(".qrcode strong").text(" ")})})});</script><script type="text/javascript">var disqus_shortname="linliume";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}(),function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/count.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}();</script><link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css"><script src="/fancybox/jquery.fancybox.pack.js"></script><script type="text/javascript">$(document).ready(function(){$(".article-content").each(function(a){$(this).find("img").each(function(){if(!$(this).parent().hasClass("fancybox")){var a=this.alt;a&&$(this).after('<span class="caption">'+a+"</span>"),$(this).wrap('<a href="'+this.src+'" title="'+a+'" class="fancybox"></a>')}}),$(this).find(".fancybox").each(function(){$(this).attr("rel","article"+a)})}),$.fancybox&&$(".fancybox").fancybox()});</script><script type="text/javascript">!function(e,n,a,t,c,s,i){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,s=n.createElement(a),i=n.getElementsByTagName(a)[0],s.async=1,s.src=t,i.parentNode.insertBefore(s,i)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-56532545-1","linliu.me"),ga("send","pageview");</script><div id="totop"><a title="Back to Top"><img src="/img/scrollup.png"></a></div><script src="/js/totop.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"],["\\(","\\)"]],processEscapes:!0}});</script><script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{skipTags:["script","noscript","style","textarea","pre","code"]}});</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function(){var a,e=MathJax.Hub.getAllJax();for(a=0;a<e.length;a+=1)e[a].SourceElement().parentNode.className+=" has-jax"});</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>The prime contest | Lin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="lin liu">
+    
+    <meta name="description" content="Overview
+sum the primes from a to b, inclusive, a &amp;lt; b &amp;lt;= $10^{14}$.Measure how long it takes your algorithm to sum the primes from 1 to $10^9$.Determine the complexity of your algorithm and calculate how long it would take to sum for a=1, b = $10^{12}$.
+Algorithm
+I have used the Sieve_of_Eratosthenes algorithm to delete the primes from the vector.">
+    
+    
+    <meta name="description" content="Overview
+sum the primes from a to b, inclusive, a &lt; b &lt;= $10^{14}$.Measure how long it takes your algorithm to sum the primes from 1 to $10^9$.Determine the complexity of your algorithm and calc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The prime contest">
+<meta property="og:url" content="http://yoursite.com/2015/02/17/The-prime-contest/">
+<meta property="og:site_name" content="Lin">
+<meta property="og:description" content="Overview
+sum the primes from a to b, inclusive, a &lt; b &lt;= $10^{14}$.Measure how long it takes your algorithm to sum the primes from 1 to $10^9$.Determine the complexity of your algorithm and calc">
+<meta property="og:image" content="http://i.imgur.com/f8dSURel.png">
+<meta property="og:image" content="http://i.imgur.com/0NN7rXal.png">
+<meta property="og:image" content="http://i.imgur.com/oNFQTwTl.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The prime contest">
+<meta name="twitter:description" content="Overview
+sum the primes from a to b, inclusive, a &lt; b &lt;= $10^{14}$.Measure how long it takes your algorithm to sum the primes from 1 to $10^9$.Determine the complexity of your algorithm and calc">
+
+
+    
+    <link rel="alternative" href="/atom.xml" title="Lin" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Lin" title="Lin"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Lin">Lin</a></h1>
+				<h2 class="blog-motto">More code , Have fun</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/17/The-prime-contest/" title="The prime contest" itemprop="url">The prime contest</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://yoursite.com/about" title="lin liu" target="_blank" itemprop="author">lin liu</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-17T06:37:34.000Z" itemprop="datePublished"> Published Feb 17 2015</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Algorithm"><span class="toc-number">2.</span> <span class="toc-text">Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multi-thread"><span class="toc-number">3.</span> <span class="toc-text">Multi-thread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiler_optimize"><span class="toc-number">4.</span> <span class="toc-text">Compiler optimize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analyze"><span class="toc-number">5.</span> <span class="toc-text">Analyze</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Final"><span class="toc-number">6.</span> <span class="toc-text">Final</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="Overview">Overview</h2>
+<p>sum the primes from a to b, inclusive, a &lt; b &lt;= $10^{14}$.<br>Measure how long it takes your algorithm to sum the primes from 1 to $10^9$.<br>Determine the complexity of your algorithm and calculate how long it would take to sum for a=1, b = $10^{12}$.</p>
+<h2 id="Algorithm">Algorithm</h2>
+<p>I have used the <a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="external">Sieve_of_Eratosthenes </a>algorithm to delete the primes from the vector.<br><a id="more"></a></p>
+<h2 id="Multi-thread">Multi-thread</h2>
+<p>I have used the multithread technology to speed up the program.I have test some data.You can change the thread number to check the answer and find the best thread number in this experiment.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Data</th>
+<th style="text-align:center">Thread number</th>
+<th style="text-align:center">Execution time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1~$10^9$</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">0.6 Sec</td>
+</tr>
+<tr>
+<td style="text-align:center">1~$10^{10}$</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">6.8 Sec</td>
+</tr>
+<tr>
+<td style="text-align:center">1~$10^{11}$</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">90 Sec</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://i.imgur.com/f8dSURel.png" alt=""></p>
+<p><img src="http://i.imgur.com/0NN7rXal.png" alt=""></p>
+<p><img src="http://i.imgur.com/oNFQTwTl.png" alt=""></p>
+<h2 id="Compiler_optimize">Compiler optimize</h2>
+<pre><code><span class="comment">clang</span><span class="literal">+</span><span class="literal">+</span> <span class="literal">-</span><span class="comment">std=c</span><span class="literal">+</span><span class="literal">+</span><span class="comment">11</span>  <span class="literal">-</span><span class="comment">O2</span> <span class="comment">main</span><span class="string">.</span><span class="comment">cpp</span>
+</code></pre><p>I have use the <code>-O2</code> to optimize the compiler and then</p>
+<pre><code>./a.<span class="keyword">out</span>
+</code></pre><p>This trick can <a href="https://msdn.microsoft.com/en-us/library/8f8h5cxt.aspx" target="_blank" rel="external">Maximize Speed</a> when compile the C++ code.</p>
+<h2 id="Analyze">Analyze</h2>
+<p>I have research on on the internet</p>
+<blockquote>
+<p>The bit complexity of the algorithm is O(n (log n) (log log n)) bit operations with a memory requirement of O(n).</p>
+</blockquote>
+<p>My result show above when I test the data $10^{9}$,$10^{10}$,$10^{11}$.Due to the algorithm complexity,I calculate the $10^{12}$ need to use 17 minute.</p>
+<h2 id="Final">Final</h2>
+<p>If you have any question,be free to contact me.Thank you!</p>
+<ul>
+<li>Author:lin</li>
+<li>Email:liulin.jacob@gmail.com</li>
+<li>Code Address:<a href="https://github.com/liulin2012/CPE593/tree/master/prime" target="_blank" rel="external">The prime contest</a></li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Algorithm/">Algorithm</a><a href="/tags/C/">C++</a><a href="/tags/multithread/">multithread</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2015/02/17/The-prime-contest/" data-title="The prime contest | Lin" data-tsina="1939168341" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/03/06/程序员必备的开发工具-MAC/" title="程序员必备的开发工具---MAC">
+  <strong>上一篇：</strong><br/>
+  <span>
+  程序员必备的开发工具---MAC</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/11/07/realize-dht-network-through-restful/"  title="Realize DHT Network through RESTful">
+ <strong>下一篇：</strong><br/> 
+ <span>Realize DHT Network through RESTful
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Algorithm"><span class="toc-number">2.</span> <span class="toc-text">Algorithm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multi-thread"><span class="toc-number">3.</span> <span class="toc-text">Multi-thread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiler_optimize"><span class="toc-number">4.</span> <span class="toc-text">Compiler optimize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Analyze"><span class="toc-number">5.</span> <span class="toc-text">Analyze</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Final"><span class="toc-number">6.</span> <span class="toc-text">Final</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/Algorithm/" title="Algorithm">Algorithm<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Cloud-Computing/" title="Cloud Computing">Cloud Computing<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Daily-life/" title="Daily life">Daily life<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Mac/" title="Mac">Mac<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Mac/" title="Mac">Mac<sup>1</sup></a></li>
+		
+			<li><a href="/tags/RESTful/" title="RESTful">RESTful<sup>1</sup></a></li>
+		
+			<li><a href="/tags/DHT/" title="DHT">DHT<sup>1</sup></a></li>
+		
+			<li><a href="/tags/multithread/" title="multithread">multithread<sup>1</sup></a></li>
+		
+			<li><a href="/tags/C/" title="C++">C++<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Algorithm/" title="Algorithm">Algorithm<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://danteland.me/" target="_blank" title="danteland">danteland</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://leaver.me/" target="_blank" title="leaver">leaver</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://luoyibu.com/" target="_blank" title="luoyibu">luoyibu</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wilbeibi.com/" target="_blank" title="wilbeibi">wilbeibi</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://yanguango.com/" target="_blank" title="yanguango">yanguango</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1939168341&verifier=dc742f79&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m lin. <br/>
+			Welcome to my blog.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/1939168341" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/liulin2012" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Pacman">Jacman</a> © 2015 
+		
+		<a href="http://yoursite.com/about" target="_blank" title="lin liu">lin liu</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'linliume';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-56532545-1', 'linliu.me');  
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
