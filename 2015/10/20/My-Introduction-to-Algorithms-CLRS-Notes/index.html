@@ -4,21 +4,127 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Lin</title>
+    <title>My Introduction to Algorithms(CLRS) Notes | Lin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="lin liu">
     
+    <meta name="description" content="tags:
+Algorithm
+@(MyNotes)
+数学
+主定理
+证明递归式的算法复杂度
+等比数列求和
+可用于递归树
+递归树求和
+求出每层的操作代价，相加，一般可能是等比数列，求等比数列。
+例子：$T(n) = T(n/4) + T(n/2) + n^2$第一行  $ n^2$第二行   $\df">
     
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lin">
-<meta property="og:url" content="http://yoursite.com/">
+    
+    <meta name="description" content="tags:
+Algorithm
+@(MyNotes)
+数学
+主定理
+证明递归式的算法复杂度
+等比数列求和
+可用于递归树
+递归树求和
+求出每层的操作代价，相加，一般可能是等比数列，求等比数列。
+例子：$T(n) = T(n/4) + T(n/2) + n^2$第一行  $ n^2$第二行   $\dfrac{5}{16} n^2$第三行  $\dfrac{25}{256} n^2$……
+利用等比数列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My Introduction to Algorithms(CLRS) Notes">
+<meta property="og:url" content="http://yoursite.com/2015/10/20/My-Introduction-to-Algorithms-CLRS-Notes/">
 <meta property="og:site_name" content="Lin">
-<meta property="og:description">
+<meta property="og:description" content="tags:
+Algorithm
+@(MyNotes)
+数学
+主定理
+证明递归式的算法复杂度
+等比数列求和
+可用于递归树
+递归树求和
+求出每层的操作代价，相加，一般可能是等比数列，求等比数列。
+例子：$T(n) = T(n/4) + T(n/2) + n^2$第一行  $ n^2$第二行   $\dfrac{5}{16} n^2$第三行  $\dfrac{25}{256} n^2$……
+利用等比数列">
+<meta property="og:image" content="./1426638202116.png">
+<meta property="og:image" content="./1426691772067.png">
+<meta property="og:image" content="./1426869956947.png">
+<meta property="og:image" content="./1426874814141.png">
+<meta property="og:image" content="./1426882872909.png">
+<meta property="og:image" content="./1426883376382.png">
+<meta property="og:image" content="./1426883661624.png">
+<meta property="og:image" content="./1426883924887.png">
+<meta property="og:image" content="./1426882570580.png">
+<meta property="og:image" content="./1426874868661.png">
+<meta property="og:image" content="./1426879889426.png">
+<meta property="og:image" content="./1426889492351.png">
+<meta property="og:image" content="./1426889447994.png">
+<meta property="og:image" content="./1426889457509.png">
+<meta property="og:image" content="./1426889470908.png">
+<meta property="og:image" content="./1427484381325.png">
+<meta property="og:image" content="./1427484768584.png">
+<meta property="og:image" content="./1427484872022.png">
+<meta property="og:image" content="./1427486420339.png">
+<meta property="og:image" content="./1427488358226.png">
+<meta property="og:image" content="./1427558738204.png">
+<meta property="og:image" content="./1427560613056.png">
+<meta property="og:image" content="./1426620637715.png">
+<meta property="og:image" content="./1426620680411.png">
+<meta property="og:image" content="./1426620721585.png">
+<meta property="og:image" content="./1427570465926.png">
+<meta property="og:image" content="./1426351924086.png">
+<meta property="og:image" content="http://i.imgur.com/kP1zC0U.png">
+<meta property="og:image" content="http://i.imgur.com/HNRUJA2.png">
+<meta property="og:image" content="http://i.imgur.com/39X3bNU.png">
+<meta property="og:image" content="http://i.imgur.com/aDkYAUI.png">
+<meta property="og:image" content="http://i.imgur.com/Yidqkow.png">
+<meta property="og:image" content="http://i.imgur.com/Eoq0X5k.png">
+<meta property="og:image" content="http://i.imgur.com/h6dGhtH.png">
+<meta property="og:image" content="http://i.imgur.com/G7nvTGo.png">
+<meta property="og:image" content="http://i.imgur.com/M2QuP5L.png">
+<meta property="og:image" content="http://i.imgur.com/4R784tj.png">
+<meta property="og:image" content="http://i.imgur.com/b5hXibY.png">
+<meta property="og:image" content="http://i.imgur.com/W55oMAF.png">
+<meta property="og:image" content="http://i.imgur.com/LgHqClm.png">
+<meta property="og:image" content="http://i.imgur.com/UyHJiY8.png">
+<meta property="og:image" content="http://i.imgur.com/i7Ny2ZR.png">
+<meta property="og:image" content="http://i.imgur.com/gouGGoe.png">
+<meta property="og:image" content="http://i.imgur.com/MTKrEiI.png">
+<meta property="og:image" content="http://i.imgur.com/frXembU.png">
+<meta property="og:image" content="http://i.imgur.com/ntBSh87.png">
+<meta property="og:image" content="http://i.imgur.com/8AK4lcF.png">
+<meta property="og:image" content="http://i.imgur.com/O0t98jp.png">
+<meta property="og:image" content="http://i.imgur.com/sflETMi.png">
+<meta property="og:image" content="http://i.imgur.com/ImDaow7.png">
+<meta property="og:image" content="http://i.imgur.com/MnZW1Rp.png">
+<meta property="og:image" content="http://i.imgur.com/j4gW6FJ.png">
+<meta property="og:image" content="http://i.imgur.com/a7Bqjwg.png">
+<meta property="og:image" content="http://i.imgur.com/B9rzBno.png">
+<meta property="og:image" content="http://i.imgur.com/aEoaTtI.png">
+<meta property="og:image" content="http://i.imgur.com/2IAO8zo.png">
+<meta property="og:image" content="http://i.imgur.com/Evmfu9F.png">
+<meta property="og:image" content="http://i.imgur.com/gVvg6Rb.png">
+<meta property="og:image" content="http://i.imgur.com/KVjWUDH.png">
+<meta property="og:image" content="http://i.imgur.com/DMoNCt8.png">
+<meta property="og:image" content="http://i.imgur.com/GPAzACk.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lin">
-<meta name="twitter:description">
+<meta name="twitter:title" content="My Introduction to Algorithms(CLRS) Notes">
+<meta name="twitter:description" content="tags:
+Algorithm
+@(MyNotes)
+数学
+主定理
+证明递归式的算法复杂度
+等比数列求和
+可用于递归树
+递归树求和
+求出每层的操作代价，相加，一般可能是等比数列，求等比数列。
+例子：$T(n) = T(n/4) + T(n/2) + n^2$第一行  $ n^2$第二行   $\dfrac{5}{16} n^2$第三行  $\dfrac{25}{256} n^2$……
+利用等比数列">
 
 
     
@@ -73,12 +179,10 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
   <h1 itemprop="name">
     
       <a href="/2015/10/20/My-Introduction-to-Algorithms-CLRS-Notes/" title="My Introduction to Algorithms(CLRS) Notes" itemprop="url">My Introduction to Algorithms(CLRS) Notes</a>
@@ -92,9 +196,16 @@
     
   </p>
 </header>
-    <div class="article-content">
-        
-        <h2 id="tags:">tags:</h2>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags:"><span class="toc-number">1.</span> <span class="toc-text">tags:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Algorithm"><span class="toc-number"></span> <span class="toc-text">Algorithm</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数学"><span class="toc-number">1.</span> <span class="toc-text">数学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主定理"><span class="toc-number">1.1.</span> <span class="toc-text">主定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#等比数列求和"><span class="toc-number">1.2.</span> <span class="toc-text">等比数列求和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归树求和"><span class="toc-number">1.3.</span> <span class="toc-text">递归树求和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代数法"><span class="toc-number">1.4.</span> <span class="toc-text">代数法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渐进符号"><span class="toc-number">1.5.</span> <span class="toc-text">渐进符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阶乘"><span class="toc-number">1.6.</span> <span class="toc-text">阶乘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分治法"><span class="toc-number">2.</span> <span class="toc-text">分治法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#$x^n$"><span class="toc-number">2.1.</span> <span class="toc-text">$x^n$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#斐波那契数列"><span class="toc-number">2.2.</span> <span class="toc-text">斐波那契数列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩阵相乘"><span class="toc-number">2.3.</span> <span class="toc-text">矩阵相乘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VLIS_layout"><span class="toc-number">2.4.</span> <span class="toc-text">VLIS layout</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#排序"><span class="toc-number">3.</span> <span class="toc-text">排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#排序时间"><span class="toc-number">3.1.</span> <span class="toc-text">排序时间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#比较排序算法"><span class="toc-number">3.1.1.</span> <span class="toc-text">比较排序算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#quicksort"><span class="toc-number">3.2.</span> <span class="toc-text">quicksort</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#作用"><span class="toc-number">3.2.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#复杂度"><span class="toc-number">3.2.2.</span> <span class="toc-text">复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优化"><span class="toc-number">3.2.3.</span> <span class="toc-text">优化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timsort"><span class="toc-number">3.3.</span> <span class="toc-text">timsort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#heapsort"><span class="toc-number">3.4.</span> <span class="toc-text">heapsort</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MAX-HEAPIFY"><span class="toc-number">3.4.1.</span> <span class="toc-text">MAX-HEAPIFY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BUILD-MAX-HEAP"><span class="toc-number">3.4.2.</span> <span class="toc-text">BUILD-MAX-HEAP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HEAPSORT"><span class="toc-number">3.4.3.</span> <span class="toc-text">HEAPSORT</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bubble_sort"><span class="toc-number">3.5.</span> <span class="toc-text">bubble sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#insertion_sort"><span class="toc-number">3.6.</span> <span class="toc-text">insertion sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mergesort"><span class="toc-number">3.7.</span> <span class="toc-text">mergesort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#selection_sort"><span class="toc-number">3.8.</span> <span class="toc-text">selection sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shell_sort"><span class="toc-number">3.9.</span> <span class="toc-text">shell sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bucket_sort"><span class="toc-number">3.10.</span> <span class="toc-text">bucket sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#counting_sort"><span class="toc-number">3.11.</span> <span class="toc-text">counting sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#radix_sort"><span class="toc-number">3.12.</span> <span class="toc-text">radix sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中位数和顺序统计学"><span class="toc-number">3.13.</span> <span class="toc-text">中位数和顺序统计学</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#最大值和最小值"><span class="toc-number">3.13.1.</span> <span class="toc-text">最大值和最小值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一般选择问题，选择第i小的数"><span class="toc-number">3.13.2.</span> <span class="toc-text">一般选择问题，选择第i小的数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最坏情况线性复杂度"><span class="toc-number">3.13.3.</span> <span class="toc-text">最坏情况线性复杂度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本数据结构"><span class="toc-number">4.</span> <span class="toc-text">基本数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#哈希表"><span class="toc-number">5.</span> <span class="toc-text">哈希表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1_直接寻址表"><span class="toc-number">5.1.</span> <span class="toc-text">11.1 直接寻址表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2_散列表"><span class="toc-number">5.2.</span> <span class="toc-text">11.2 散列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-3_散列函数"><span class="toc-number">5.3.</span> <span class="toc-text">11.3 散列函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-4_开放寻址法"><span class="toc-number">5.4.</span> <span class="toc-text">11.4 开放寻址法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#树"><span class="toc-number">6.</span> <span class="toc-text">树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉查找树"><span class="toc-number">6.1.</span> <span class="toc-text">二叉查找树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#红黑树"><span class="toc-number">6.2.</span> <span class="toc-text">红黑树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5个性质："><span class="toc-number">6.2.1.</span> <span class="toc-text">5个性质：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插入"><span class="toc-number">6.2.2.</span> <span class="toc-text">插入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除"><span class="toc-number">6.2.3.</span> <span class="toc-text">删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据结构的扩张"><span class="toc-number">6.3.</span> <span class="toc-text">数据结构的扩张</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#红黑树：动态顺序统计"><span class="toc-number">6.3.1.</span> <span class="toc-text">红黑树：动态顺序统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何扩张数据结构"><span class="toc-number">6.3.2.</span> <span class="toc-text">如何扩张数据结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区间树"><span class="toc-number">6.3.3.</span> <span class="toc-text">区间树</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B树"><span class="toc-number">6.4.</span> <span class="toc-text">B树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#优点"><span class="toc-number">6.4.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#定义"><span class="toc-number">6.4.2.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#搜索"><span class="toc-number">6.4.3.</span> <span class="toc-text">搜索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插入-1"><span class="toc-number">6.4.4.</span> <span class="toc-text">插入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除-1"><span class="toc-number">6.4.5.</span> <span class="toc-text">删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跳跃表_skip_list"><span class="toc-number">6.5.</span> <span class="toc-text">跳跃表 skip list</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态规划"><span class="toc-number">7.</span> <span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#装配线问题"><span class="toc-number">7.1.</span> <span class="toc-text">装配线问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩阵链乘法"><span class="toc-number">7.2.</span> <span class="toc-text">矩阵链乘法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LCS"><span class="toc-number">7.3.</span> <span class="toc-text">LCS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4个步骤"><span class="toc-number">7.4.</span> <span class="toc-text">4个步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#要素"><span class="toc-number">7.5.</span> <span class="toc-text">要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贪心算法"><span class="toc-number">7.6.</span> <span class="toc-text">贪心算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#平摊分析"><span class="toc-number">7.7.</span> <span class="toc-text">平摊分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#斐波那契数列-1"><span class="toc-number">8.</span> <span class="toc-text">斐波那契数列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#斐波那契堆"><span class="toc-number">8.1.</span> <span class="toc-text">斐波那契堆</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不相交集合的数据结构"><span class="toc-number">9.</span> <span class="toc-text">不相交集合的数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#链表表示"><span class="toc-number">9.1.</span> <span class="toc-text">链表表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不相交集合森林"><span class="toc-number">9.2.</span> <span class="toc-text">不相交集合森林</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图"><span class="toc-number">10.</span> <span class="toc-text">图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#表示方式"><span class="toc-number">10.1.</span> <span class="toc-text">表示方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFS"><span class="toc-number">10.2.</span> <span class="toc-text">BFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单源最短路径"><span class="toc-number">10.3.</span> <span class="toc-text">单源最短路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dijkstra"><span class="toc-number">10.4.</span> <span class="toc-text">Dijkstra</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DFS"><span class="toc-number">10.5.</span> <span class="toc-text">DFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拓扑排序"><span class="toc-number">10.6.</span> <span class="toc-text">拓扑排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dag中的单源最短路径"><span class="toc-number">10.7.</span> <span class="toc-text">dag中的单源最短路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#强连通分支"><span class="toc-number">10.8.</span> <span class="toc-text">强连通分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最小生成树"><span class="toc-number">10.9.</span> <span class="toc-text">最小生成树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Kruskal"><span class="toc-number">10.9.1.</span> <span class="toc-text">Kruskal</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Prim"><span class="toc-number">10.9.2.</span> <span class="toc-text">Prim</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bellman-Ford"><span class="toc-number">10.10.</span> <span class="toc-text">Bellman-Ford</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#差分约束"><span class="toc-number">10.10.1.</span> <span class="toc-text">差分约束</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#每对顶点间的最短路径"><span class="toc-number">10.11.</span> <span class="toc-text">每对顶点间的最短路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#最短路径与矩阵乘法"><span class="toc-number">10.11.1.</span> <span class="toc-text">最短路径与矩阵乘法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Floyd-Warshall"><span class="toc-number">10.11.2.</span> <span class="toc-text">Floyd-Warshall</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Johnson算法"><span class="toc-number">10.11.3.</span> <span class="toc-text">Johnson算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最大流"><span class="toc-number">10.12.</span> <span class="toc-text">最大流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Ford-Fulkerson"><span class="toc-number">10.12.1.</span> <span class="toc-text">Ford-Fulkerson</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最大二分匹配"><span class="toc-number">10.12.2.</span> <span class="toc-text">最大二分匹配</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#矩阵"><span class="toc-number">11.</span> <span class="toc-text">矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解线性方程式"><span class="toc-number">11.1.</span> <span class="toc-text">解线性方程式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典专题"><span class="toc-number">12.</span> <span class="toc-text">经典专题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编辑距离"><span class="toc-number">12.1.</span> <span class="toc-text">编辑距离</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-number">13.</span> <span class="toc-text">工具</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="tags:">tags:</h2>
 <h1 id="Algorithm">Algorithm</h1>
 <p>@(MyNotes)</p>
 <h2 id="数学">数学</h2>
@@ -579,460 +690,59 @@
 <p><a href="http://wilbeibi.com/2015/05/2015-05-09-K_edit_distances/" target="_blank" rel="external">http://wilbeibi.com/2015/05/2015-05-09-K_edit_distances/</a><br><a href="https://gist.github.com/Wilbeibi/46afba947d929cc7a0c8" target="_blank" rel="external">https://gist.github.com/Wilbeibi/46afba947d929cc7a0c8</a><br><a href="http://www.zhihu.com/question/29592463" target="_blank" rel="external">http://www.zhihu.com/question/29592463</a></p>
 <h2 id="工具">工具</h2>
 <p><a href="https://www.cs.usfca.edu/~galles/visualization/" target="_blank" rel="external">可视化</a><br><a href="http://www.sorting-algorithms.com/" target="_blank" rel="external">排序</a><br><a href="http://en.wikibooks.org/wiki/LaTeX/Mathematics" target="_blank" rel="external">latex:Mathematics</a></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/10/20/My-Introduction-to-Algorithms-CLRS-Notes/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/04/My-TCP-IP-Notes/" title="My TCP/IP Notes" itemprop="url">My TCP/IP Notes</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="lin liu" target="_blank" itemprop="author">lin liu</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-05T02:09:27.000Z" itemprop="datePublished"> Published Apr 4 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="TCP/IP_详解(卷1:协议)">TCP/IP 详解(卷1:协议)</h1>
-<p>这是我阅读 <a href="http://book.douban.com/subject/1088054/" target="_blank" rel="external">TCP/IP详解</a> 的笔记，有了新内容会持续进行更新，谢谢！</p>
-<h1 id="概述">概述</h1>
-<p>tcp/ip 四层协议:</p>
-<ul>
-<li>链路层：设备驱动程序及接口卡</li>
-<li>网络层：处理分组在网络中的活动</li>
-<li>运输层：为两台主机上的应用程序提供端到端的通信</li>
-<li>应用层：处理应用程序细节
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/04/04/My-TCP-IP-Notes/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Network/">Network</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/TCP-IP/">TCP/IP</a><a href="/tags/Network/">Network</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/04/04/My-TCP-IP-Notes/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/03/10/利用vim反向破解文件/" title="利用vim反向破解文件" itemprop="url">利用vim反向破解文件</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="lin liu" target="_blank" itemprop="author">lin liu</a>
-		
-  <p class="article-time">
-    <time datetime="2015-03-11T03:00:06.000Z" itemprop="datePublished"> Published Mar 10 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="前言">前言</h1>
-<p>前几天和<a href="http://wilbeibi.com" target="_blank" rel="external">wilbeibi</a>聊到CS615的最后一次大作业，老师开放漏洞让我们去攻击学校的服务器占领首页，然后各小组之间24小时内互相攻击，于是去年做的时候他去服务器上偷偷事先把别人的ssh私钥下载下来了然后取得了胜利，放了一个超级马里奥的游戏上去。。。。。实在是太贱了。。。。</p>
-<p>然后<a href="http://wilbeibi.com" target="_blank" rel="external">wilbeibi</a>继续吹比说，他的文件目录权限设置的特别好，即使一个group的也几乎啥都看不到，不信让我去看看，然后我就真的去看了看，这是配图。。</p>
-<p><img src="http://i.imgur.com/IxFMTUW.png" alt="Imgur"></p>
-<p>乍一看，除了几个作业的目录和无关紧要的配置文件，别的权限基本都不可读，全被设置好了，但是这一组文件引起了我的兴趣</p>
-<p><img src="http://i.imgur.com/PTpwXsp.png" alt="Imgur"></p>
-
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/03/10/利用vim反向破解文件/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
+	</div>
+		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/linux/">linux</a>
+
 </div>
 
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/vim/">vim</a><a href="/tags/security/">security</a><a href="/tags/linux/">linux</a>
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2015/10/20/My-Introduction-to-Algorithms-CLRS-Notes/" data-title="My Introduction to Algorithms(CLRS) Notes | Lin" data-tsina="1939168341" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/04/04/My-TCP-IP-Notes/"  title="My TCP/IP Notes">
+ <strong>下一篇：</strong><br/> 
+ <span>My TCP/IP Notes
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
+</section>
 
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/03/10/利用vim反向破解文件/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/03/06/程序员必备的开发工具-MAC/" title="程序员必备的开发工具---MAC" itemprop="url">程序员必备的开发工具---MAC</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="lin liu" target="_blank" itemprop="author">lin liu</a>
-		
-  <p class="article-time">
-    <time datetime="2015-03-06T06:27:26.000Z" itemprop="datePublished"> Published Mar 6 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="前言">前言</h2>
-<p>用Mac也1年多了，前半年基本用来打游戏看电影了，由于mac基于unix而来，游戏比较少，好在我只玩dota2，所以对我来说，mac的娱乐性很足。</p>
-<p>真正让我感觉离不开Mac的，是我这半年来的学习和开发，在<a href="http://yanguango.com" target="_blank" rel="external">yanguango</a>和<a href="http://wilbeibi.com" target="_blank" rel="external">wilbeibi</a>的帮助下，对mac可以说有了全新的认识，也对linux编程，shell，vim有了更深入的了解。</p>
-<h2 id="为什么选择Mac？">为什么选择Mac？</h2>
-<p>对于一个程序猿来说，<strong>效率</strong>永远是第一位的，这不仅体现在学习的效率，还有工作编码的效率。在时间平等的情况下，如果才能有更多的<strong>产出</strong>，这一直是程序员所要思考进步的，如何节省<strong>时间</strong>来换取更高的产出呢?答案是——<a href="http://daily.zhihu.com/story/3387025" target="_blank" rel="external">能花钱的，就不要花时间</a></p>
-<p>也许有的人说，Mac太贵，对一个还在上学的学生来说压力太大，确实，2000刀的一台mac对于学生党来说是不小的开支，但是如果你有能力，我<strong>极力</strong>劝你先入手一台mac，为什么呢？——<a href="http://www.cnblogs.com/chijianqiang/p/mmac.html" target="_blank" rel="external">先有 Mac 还是先有银元？</a></p>
-<p>那有了Mac如何提高效率了，可以看看这篇文章——<a href="http://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&amp;mid=206041450&amp;idx=1&amp;sn=3982c8cc45d7c47f0fbc19fe8371490f&amp;scene=0#rd" target="_blank" rel="external">程序员效率指南</a></p>
-<p><strong>工欲善其事，必选利其器</strong></p>
-<p>下面是我自己的一些经验分享，也是我最常使用的一些软件。<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/03/06/程序员必备的开发工具-MAC/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Mac/">Mac</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Mac/">Mac</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/03/06/程序员必备的开发工具-MAC/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/17/The-prime-contest/" title="The prime contest" itemprop="url">The prime contest</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="lin liu" target="_blank" itemprop="author">lin liu</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-17T06:37:34.000Z" itemprop="datePublished"> Published Feb 17 2015</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="Overview">Overview</h2>
-<p>sum the primes from a to b, inclusive, a &lt; b &lt;= $10^{14}$.<br>Measure how long it takes your algorithm to sum the primes from 1 to $10^9$.<br>Determine the complexity of your algorithm and calculate how long it would take to sum for a=1, b = $10^{12}$.</p>
-<h2 id="Algorithm">Algorithm</h2>
-<p>I have used the <a href="http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes" target="_blank" rel="external">Sieve_of_Eratosthenes </a>algorithm to delete the primes from the vector.<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/02/17/The-prime-contest/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Algorithm/">Algorithm</a><a href="/tags/C/">C++</a><a href="/tags/multithread/">multithread</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/02/17/The-prime-contest/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/11/07/realize-dht-network-through-restful/" title="Realize DHT Network through RESTful" itemprop="url">Realize DHT Network through RESTful</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="lin liu" target="_blank" itemprop="author">lin liu</a>
-		
-  <p class="article-time">
-    <time datetime="2014-11-08T04:53:34.000Z" itemprop="datePublished"> Published Nov 7 2014</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="1-DHT_Network">1.DHT Network</h1>
-<blockquote>
-<p>DHT(<a href="http://en.wikipedia.org/wiki/Distributed_hash_table" title="DHT" target="_blank" rel="external">Distributed Hash Tables</a>)is a class of a decentralized <a href="http://en.wikipedia.org/wiki/Distributed_computing" title="Distributed computing" target="_blank" rel="external">distributed system</a> that provides a lookup service similar to a <a href="http://en.wikipedia.org/wiki/Hash_table" title="Hash table" target="_blank" rel="external">hash table</a>; (<em>key</em>, <em>value</em>) pairs are stored in a DHT, and any participating <a href="http://en.wikipedia.org/wiki/Node_(networking" target="_blank" rel="external">node</a> “Node (networking)”) can efficiently retrieve the value associated with a given key. Responsibility for maintaining the mapping from keys to values is distributed among the nodes, in such a way that a change in the set of participants causes a minimal amount of disruption. This allows a DHT to scale to extremely large numbers of nodes and to handle continual node arrivals, departures, and failures.</p>
-</blockquote>
-<p>The key idea for the DHT network is utilize the pair(key,value) to  store and retrieve the data in distributed system.<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2014/11/07/realize-dht-network-through-restful/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Cloud-Computing/">Cloud Computing</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/DHT/">DHT</a><a href="/tags/RESTful/">RESTful</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/11/07/realize-dht-network-through-restful/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/10/09/helloeveryone/" title="Hello,Everyone" itemprop="url">Hello,Everyone</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="http://yoursite.com/about" title="lin liu" target="_blank" itemprop="author">lin liu</a>
-		
-  <p class="article-time">
-    <time datetime="2014-10-10T00:30:40.000Z" itemprop="datePublished"> Published Oct 9 2014</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Hello,everyone,I am lin liu,come from China My major is computer science and I am studying in America now.</p>
-<p>Soccer and Dota2 are my favorite sports.Besides that,I am also fond of studying the computer science technology ,especially the cloud computing and algorithm.</p>
-<p>This blog will be updated in an indefinite schedule,including the technology passage,studying experience,life record and so on.The passage will be written in English,sometimes both in English and Chinese.Due to my poor English,maybe I will write some sentences you can’t understand.Please calm down,do not fuck me.I am learning. lol</p>
-<p>Finally,thank you for your coming.Good luck,have fun~~</p>
-<p>&nbsp;</p>
-<p>大家好，我是刘霖，来自中国，CS专业苦逼码农一枚，现在在大美帝专心读书。</p>
-<p>平时酷爱踢足球打Dota2，没事钻研一下技术，现在主要学习云计算以及算法方面的知识,</p>
-<p>本博客不定时更新文章，包括技术文章，学习心得，生活记录等等，经常拖稿和跳票，一般写英文的，有时候也会中英文双语，看心情。。。嘿嘿。。。由于英语水平不过关，经常会出现chiglish的情况，大家不要喷我，我也在慢慢学习之中。</p>
-<p>最后谢谢大家来到我的博客，Have fun~~</p>
-<p>&nbsp;</p>
-<p>Lin</p>
-<p>liulin.jacob@gmail.com</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Daily-life/">Daily life</a>
-</div>
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/10/09/helloeveryone/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-
-</div>
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags:"><span class="toc-number">1.</span> <span class="toc-text">tags:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Algorithm"><span class="toc-number"></span> <span class="toc-text">Algorithm</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数学"><span class="toc-number">1.</span> <span class="toc-text">数学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主定理"><span class="toc-number">1.1.</span> <span class="toc-text">主定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#等比数列求和"><span class="toc-number">1.2.</span> <span class="toc-text">等比数列求和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归树求和"><span class="toc-number">1.3.</span> <span class="toc-text">递归树求和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代数法"><span class="toc-number">1.4.</span> <span class="toc-text">代数法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渐进符号"><span class="toc-number">1.5.</span> <span class="toc-text">渐进符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阶乘"><span class="toc-number">1.6.</span> <span class="toc-text">阶乘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分治法"><span class="toc-number">2.</span> <span class="toc-text">分治法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#$x^n$"><span class="toc-number">2.1.</span> <span class="toc-text">$x^n$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#斐波那契数列"><span class="toc-number">2.2.</span> <span class="toc-text">斐波那契数列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩阵相乘"><span class="toc-number">2.3.</span> <span class="toc-text">矩阵相乘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VLIS_layout"><span class="toc-number">2.4.</span> <span class="toc-text">VLIS layout</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#排序"><span class="toc-number">3.</span> <span class="toc-text">排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#排序时间"><span class="toc-number">3.1.</span> <span class="toc-text">排序时间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#比较排序算法"><span class="toc-number">3.1.1.</span> <span class="toc-text">比较排序算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#quicksort"><span class="toc-number">3.2.</span> <span class="toc-text">quicksort</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#作用"><span class="toc-number">3.2.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#复杂度"><span class="toc-number">3.2.2.</span> <span class="toc-text">复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优化"><span class="toc-number">3.2.3.</span> <span class="toc-text">优化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timsort"><span class="toc-number">3.3.</span> <span class="toc-text">timsort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#heapsort"><span class="toc-number">3.4.</span> <span class="toc-text">heapsort</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MAX-HEAPIFY"><span class="toc-number">3.4.1.</span> <span class="toc-text">MAX-HEAPIFY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BUILD-MAX-HEAP"><span class="toc-number">3.4.2.</span> <span class="toc-text">BUILD-MAX-HEAP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HEAPSORT"><span class="toc-number">3.4.3.</span> <span class="toc-text">HEAPSORT</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bubble_sort"><span class="toc-number">3.5.</span> <span class="toc-text">bubble sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#insertion_sort"><span class="toc-number">3.6.</span> <span class="toc-text">insertion sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mergesort"><span class="toc-number">3.7.</span> <span class="toc-text">mergesort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#selection_sort"><span class="toc-number">3.8.</span> <span class="toc-text">selection sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shell_sort"><span class="toc-number">3.9.</span> <span class="toc-text">shell sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bucket_sort"><span class="toc-number">3.10.</span> <span class="toc-text">bucket sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#counting_sort"><span class="toc-number">3.11.</span> <span class="toc-text">counting sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#radix_sort"><span class="toc-number">3.12.</span> <span class="toc-text">radix sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中位数和顺序统计学"><span class="toc-number">3.13.</span> <span class="toc-text">中位数和顺序统计学</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#最大值和最小值"><span class="toc-number">3.13.1.</span> <span class="toc-text">最大值和最小值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一般选择问题，选择第i小的数"><span class="toc-number">3.13.2.</span> <span class="toc-text">一般选择问题，选择第i小的数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最坏情况线性复杂度"><span class="toc-number">3.13.3.</span> <span class="toc-text">最坏情况线性复杂度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本数据结构"><span class="toc-number">4.</span> <span class="toc-text">基本数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#哈希表"><span class="toc-number">5.</span> <span class="toc-text">哈希表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1_直接寻址表"><span class="toc-number">5.1.</span> <span class="toc-text">11.1 直接寻址表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2_散列表"><span class="toc-number">5.2.</span> <span class="toc-text">11.2 散列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-3_散列函数"><span class="toc-number">5.3.</span> <span class="toc-text">11.3 散列函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-4_开放寻址法"><span class="toc-number">5.4.</span> <span class="toc-text">11.4 开放寻址法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#树"><span class="toc-number">6.</span> <span class="toc-text">树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二叉查找树"><span class="toc-number">6.1.</span> <span class="toc-text">二叉查找树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#红黑树"><span class="toc-number">6.2.</span> <span class="toc-text">红黑树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5个性质："><span class="toc-number">6.2.1.</span> <span class="toc-text">5个性质：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插入"><span class="toc-number">6.2.2.</span> <span class="toc-text">插入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除"><span class="toc-number">6.2.3.</span> <span class="toc-text">删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据结构的扩张"><span class="toc-number">6.3.</span> <span class="toc-text">数据结构的扩张</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#红黑树：动态顺序统计"><span class="toc-number">6.3.1.</span> <span class="toc-text">红黑树：动态顺序统计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何扩张数据结构"><span class="toc-number">6.3.2.</span> <span class="toc-text">如何扩张数据结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区间树"><span class="toc-number">6.3.3.</span> <span class="toc-text">区间树</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B树"><span class="toc-number">6.4.</span> <span class="toc-text">B树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#优点"><span class="toc-number">6.4.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#定义"><span class="toc-number">6.4.2.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#搜索"><span class="toc-number">6.4.3.</span> <span class="toc-text">搜索</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#插入-1"><span class="toc-number">6.4.4.</span> <span class="toc-text">插入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除-1"><span class="toc-number">6.4.5.</span> <span class="toc-text">删除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跳跃表_skip_list"><span class="toc-number">6.5.</span> <span class="toc-text">跳跃表 skip list</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态规划"><span class="toc-number">7.</span> <span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#装配线问题"><span class="toc-number">7.1.</span> <span class="toc-text">装配线问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩阵链乘法"><span class="toc-number">7.2.</span> <span class="toc-text">矩阵链乘法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LCS"><span class="toc-number">7.3.</span> <span class="toc-text">LCS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4个步骤"><span class="toc-number">7.4.</span> <span class="toc-text">4个步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#要素"><span class="toc-number">7.5.</span> <span class="toc-text">要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贪心算法"><span class="toc-number">7.6.</span> <span class="toc-text">贪心算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#平摊分析"><span class="toc-number">7.7.</span> <span class="toc-text">平摊分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#斐波那契数列-1"><span class="toc-number">8.</span> <span class="toc-text">斐波那契数列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#斐波那契堆"><span class="toc-number">8.1.</span> <span class="toc-text">斐波那契堆</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不相交集合的数据结构"><span class="toc-number">9.</span> <span class="toc-text">不相交集合的数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#链表表示"><span class="toc-number">9.1.</span> <span class="toc-text">链表表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不相交集合森林"><span class="toc-number">9.2.</span> <span class="toc-text">不相交集合森林</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图"><span class="toc-number">10.</span> <span class="toc-text">图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#表示方式"><span class="toc-number">10.1.</span> <span class="toc-text">表示方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFS"><span class="toc-number">10.2.</span> <span class="toc-text">BFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单源最短路径"><span class="toc-number">10.3.</span> <span class="toc-text">单源最短路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dijkstra"><span class="toc-number">10.4.</span> <span class="toc-text">Dijkstra</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DFS"><span class="toc-number">10.5.</span> <span class="toc-text">DFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拓扑排序"><span class="toc-number">10.6.</span> <span class="toc-text">拓扑排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dag中的单源最短路径"><span class="toc-number">10.7.</span> <span class="toc-text">dag中的单源最短路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#强连通分支"><span class="toc-number">10.8.</span> <span class="toc-text">强连通分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最小生成树"><span class="toc-number">10.9.</span> <span class="toc-text">最小生成树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Kruskal"><span class="toc-number">10.9.1.</span> <span class="toc-text">Kruskal</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Prim"><span class="toc-number">10.9.2.</span> <span class="toc-text">Prim</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bellman-Ford"><span class="toc-number">10.10.</span> <span class="toc-text">Bellman-Ford</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#差分约束"><span class="toc-number">10.10.1.</span> <span class="toc-text">差分约束</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#每对顶点间的最短路径"><span class="toc-number">10.11.</span> <span class="toc-text">每对顶点间的最短路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#最短路径与矩阵乘法"><span class="toc-number">10.11.1.</span> <span class="toc-text">最短路径与矩阵乘法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Floyd-Warshall"><span class="toc-number">10.11.2.</span> <span class="toc-text">Floyd-Warshall</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Johnson算法"><span class="toc-number">10.11.3.</span> <span class="toc-text">Johnson算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最大流"><span class="toc-number">10.12.</span> <span class="toc-text">最大流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Ford-Fulkerson"><span class="toc-number">10.12.1.</span> <span class="toc-text">Ford-Fulkerson</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最大二分匹配"><span class="toc-number">10.12.2.</span> <span class="toc-text">最大二分匹配</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#矩阵"><span class="toc-number">11.</span> <span class="toc-text">矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解线性方程式"><span class="toc-number">11.1.</span> <span class="toc-text">解线性方程式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典专题"><span class="toc-number">12.</span> <span class="toc-text">经典专题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编辑距离"><span class="toc-number">12.1.</span> <span class="toc-text">编辑距离</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-number">13.</span> <span class="toc-text">工具</span></a></li></ol>
+ 
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
@@ -1210,6 +920,8 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
@@ -1229,6 +941,67 @@ $(document).ready(function(){
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
 
@@ -1257,6 +1030,27 @@ var disqus_shortname = 'linliume';
 
 
 
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
 
 
 
@@ -1323,4 +1117,4 @@ ga('send', 'pageview');
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 </body>
- </html>
+</html>
